@@ -3867,7 +3867,7 @@ var a = "test2";
         const config = { rules: { checker: "error" } };
 
         it("should get cwd correctly in the context", () => {
-            const cwd = "cwd";
+            const cwd = "/cwd";
             const linterWithOption = new Linter({ cwd, configType: "eslintrc" });
             let spy;
 
@@ -7779,7 +7779,7 @@ describe("Linter with FlatConfigArray", () => {
      * @returns {FlatConfigArray} The created config array.
      */
     function createFlatConfigArray(value) {
-        return new FlatConfigArray(value, { basePath: "" });
+        return new FlatConfigArray(value, { basePath: process.cwd() });
     }
 
     beforeEach(() => {
@@ -9764,7 +9764,7 @@ describe("Linter with FlatConfigArray", () => {
                 const baseConfig = { rules: { "test/checker": "error" } };
 
                 it("should get cwd correctly in the context", () => {
-                    const cwd = "cwd";
+                    const cwd = "/cwd";
                     const linterWithOption = new Linter({ cwd, configType: "flat" });
                     let spy;
                     const config = {
@@ -9847,7 +9847,7 @@ describe("Linter with FlatConfigArray", () => {
                 const baseConfig = { rules: { "test/checker": "error" } };
 
                 it("should get cwd correctly in the context", () => {
-                    const cwd = "cwd";
+                    const cwd = "/cwd";
                     const linterWithOption = new Linter({ cwd, configType: "flat" });
                     let spy;
                     const config = {
