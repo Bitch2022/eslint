@@ -7779,7 +7779,7 @@ describe("Linter with FlatConfigArray", () => {
      * @returns {FlatConfigArray} The created config array.
      */
     function createFlatConfigArray(value) {
-        return new FlatConfigArray(value, { basePath: process.cwd() });
+        return new FlatConfigArray(value, { basePath: "" });
     }
 
     beforeEach(() => {
